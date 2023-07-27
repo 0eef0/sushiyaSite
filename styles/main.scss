@@ -1,0 +1,285 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main,
+article,
+aside,
+figure,
+footer,
+header,
+nav,
+section,
+details,
+summary {
+    display: block;
+}
+
+//handle box-sizing on a inhereted level
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+//this helps with img scaling, you might have an
+//issue if you didn't make the embed. If you do
+//comment out height: auto
+img,
+object,
+embed {
+    max-width: 100%;
+    height: auto;
+}
+
+//add smoth scrolling to your pages
+html {
+    overflow-y: scroll;
+}
+
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+
+    &::before,
+    &::after {
+        content: "";
+        content: none;
+    }
+}
+
+// blockquote::before,
+// blockquote::after,
+// q::before,
+// q::after {
+// }
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted #222;
+    cursor: help;
+}
+
+//table settings
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom; //center is also common
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+pre {
+    white-space: pre; //CSS2
+    white-space: pre-wrap; //CSS2.1
+    white-space: pre-line; //CSS3
+    word-wrap: break-word; // IE
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+.ie7 input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+.ie6 input {
+    vertical-align: text-bottom;
+}
+
+select,
+input,
+textarea {
+    font-size: 99%;
+}
+
+small {
+    font-size: 85%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+//super and sub text
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+.clickable,
+label,
+input[type="button"],
+input[type="submit"],
+input[type="file"],
+button {
+    cursor: pointer;
+}
+
+//fix buttons for IE7
+button,
+input[type="button"] {
+    width: auto;
+    overflow: hidden;
+    border-color: transparent;
+    text-transform: capitalize;
+}
+
+//fix scalable imgs for IE7
+.ie7 img {
+    -ms-interpolation-mode: bicubic;
+}
+
+//fixing container collapse
+.clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+@font-face {
+    font-family: cloud;
+    src: url(../assets/cloud.ttf);
+}
+
+body {
+    background-color: #0e87cc;
+    padding-top: 20vh;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; // temp
+
+nav#header {
+    background: skyblue;
+    position: fixed;
+    top: -8vh;
+    left: -1vw;
+    height: 20vh;
+    display: inline-block;
+    width: 110vw;
+    transform: rotate(-3deg);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2vw;
+
+    --mask:
+            radial-gradient(3.91rem at 50% calc(100% - 5.25rem), #000 99%, #0000 101%) calc(50% - 3.5rem) 0/7rem 100%,
+            radial-gradient(3.91rem at 50% calc(100% + 3.50rem), #0000 99%, #000 101%) 50% calc(100% - 1.75rem)/7rem 100% repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+
+    img {
+        width: 10vw;
+        min-width: 100px;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3vw;
+        transform: rotate(0deg) translateY(0.3rem);
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        li {
+            font-size: calc(1.8vw + 1.8vh);
+        }
+    }
+}
+
+div#restaurantInfo {
+    display: flex;
+    justify-content: center;
+    div#hours {
+        display: flex;
+        width: 60%;
+        justify-content: space-around;
+        text-align: center;
+        color: white;
+
+        td[colspan="2"] {
+            border-bottom: 2px solid red;
+        }
+    }
+}
+
+div#menu {
+    background-color: white;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.25), 0px -10px 5px 0px rgba(0, 0, 0, 0.25);
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    div.item{
+        display: flex;
+        justify-content: space-between;
+        width: 45%;
+        margin: 1rem;
+        gap: 1rem;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: cover;
+            border: 4px solid skyblue;
+        }
+        div.itemHeader {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid skyblue;
+        }
+    }
+}
+}
