@@ -220,13 +220,24 @@ body nav#header ul li {
 body div#restaurantInfo {
   display: flex;
   justify-content: center;
+  color: white;
+  flex-wrap: wrap;
+}
+body div#restaurantInfo div#happyHour {
+  width: 100%;
+  margin: 1rem 0;
+}
+body div#restaurantInfo div#happyHour h1 {
+  text-align: center;
+}
+body div#restaurantInfo div#happyHour h1 span {
+  color: red;
 }
 body div#restaurantInfo div#hours {
   display: flex;
   width: 60%;
   justify-content: space-around;
   text-align: center;
-  color: white;
 }
 body div#restaurantInfo div#hours td[colspan="2"] {
   border-bottom: 2px solid red;
