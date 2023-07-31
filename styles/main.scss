@@ -22,6 +22,7 @@ summary {
 //handle box-sizing on a inhereted level
 html {
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 *,
@@ -218,6 +219,7 @@ nav#header {
     justify-content: left;
     align-items: center;
     gap: 2vw;
+    z-index: 10000;
 
     --mask:
             radial-gradient(3.91rem at 50% calc(100% - 5.25rem), #000 99%, #0000 101%) calc(50% - 3.5rem) 0/7rem 100%,
@@ -249,6 +251,20 @@ div#restaurantInfo {
     color: $white;
     flex-wrap: wrap;
 
+    .carpImg {
+        position: absolute;
+        width: 10vw;
+
+        &.left {
+            left: -1rem;
+        }
+
+        &.right {
+            right: -1rem;
+            transform: scaleY(-1) scaleX(-1);
+        }
+    }
+
     div#happyHour {
         width: 60%;
         text-align: center;
@@ -269,8 +285,16 @@ div#restaurantInfo {
         justify-content: space-around;
         text-align: center;
 
+        .day {
+            text-align: left;
+            padding-right: 1rem;
+        }
+
         td[colspan="2"] {
             border-bottom: 2px solid red;
+        }
+        td {
+            padding: 0.1rem;
         }
     }
 
