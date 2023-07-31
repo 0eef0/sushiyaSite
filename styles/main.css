@@ -224,8 +224,11 @@ body div#restaurantInfo {
   flex-wrap: wrap;
 }
 body div#restaurantInfo div#happyHour {
-  width: 100%;
+  width: 60%;
+  text-align: center;
+  padding: 1rem;
   margin: 1rem 0;
+  border-bottom: 2px solid red;
 }
 body div#restaurantInfo div#happyHour h1 {
   text-align: center;
@@ -241,6 +244,23 @@ body div#restaurantInfo div#hours {
 }
 body div#restaurantInfo div#hours td[colspan="2"] {
   border-bottom: 2px solid red;
+}
+body div#restaurantInfo div#delivery {
+  display: flex;
+  width: 60%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  flex-wrap: wrap;
+}
+body div#restaurantInfo div#delivery h2 {
+  width: 100%;
+  text-align: center;
+}
+body div#restaurantInfo div#delivery a img {
+  width: 10rem;
 }
 body div#menu {
   background-color: white;
